@@ -59,28 +59,32 @@ class App extends Component {
             <MoviePoster movieData={this.state.movieData} />
           )}
           <div className="movies-board">
-            {this.state.initialData.map((movie) => {
-              return (
-                <div
-                  key={movie.id}
-                  className="movie-card"
-                  draggable
-                  onClick={() =>
-                    this.setState({
-                      showMovie: true,
-                      movieData: movie,
-                    })
-                  }
-                >
-                  <img
-                    className="movie-image"
-                    src={`https://image.tmdb.org/t/p/w500//${movie.poster_path}`}
-                    alt={movie.original_title}
-                  />
-                  <span className="movie-title">{movie.title}</span>
-                </div>
-              );
-            })}
+            {this.state.initialData.length ? (
+              this.state.initialData.map((movie) => {
+                return (
+                  <div
+                    key={movie.id}
+                    className="movie-card"
+                    draggable
+                    onClick={() =>
+                      this.setState({
+                        showMovie: true,
+                        movieData: movie,
+                      })
+                    }
+                  >
+                    <img
+                      className="movie-image"
+                      src={`https://image.tmdb.org/t/p/w500//${movie.poster_path}`}
+                      alt={movie.original_title}
+                    />
+                    <span className="movie-title">{movie.title}</span>
+                  </div>
+                );
+              })
+            ) : (
+              <img className="not-found" src="https://img.freepik.com/free-vector/concept-website-maintenance_118813-1957.jpg?w=1800" alt="not-found" />
+            )}
           </div>
         </div>
       </div>
