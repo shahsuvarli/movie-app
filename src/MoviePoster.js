@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { FcBusinessman } from "react-icons/fc";
+import { MdClear } from "react-icons/md";
 
 class MoviePoster extends Component {
   render() {
@@ -13,13 +14,18 @@ class MoviePoster extends Component {
           />
         </div>
         <div className="movie-detail">
+          <div onClick={this.props.clearPoster} style={{ cursor: "pointer" }}>
+            <MdClear size={30} color="wheat" />
+          </div>
           <h2>
             {this.props.movieData.title} ({this.props.movieData.vote_average})
             {this.props.movieData.adult && <FcBusinessman size={30} />}
           </h2>
           <h3>{this.props.movieData.release_date}</h3>
-          <p>{this.props.movieData.overview}</p>
-          {/* <h1 className="x-button">X</h1> */}
+          <p>
+            {this.props.movieData.overview.split(" ").slice(0, 35).join(" ")}{" "}
+            <strong>read more...</strong>
+          </p>
         </div>
       </div>
     );
