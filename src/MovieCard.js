@@ -1,22 +1,27 @@
-import { Component } from "react";
+import { BsCartPlusFill } from "react-icons/bs";
 
-class MovieCard extends Component {
-  render() {
-    return (
-      <div
-        className="movie-card"
-        onClick={() => this.props.addToPoster(this.props.movie)}
-        draggable
-      >
-        <img
-          className="movie-image"
-          src={`https://image.tmdb.org/t/p/w500//${this.props.movie.poster_path}`}
-          alt={this.props.movie.original_title}
-        />
-        <span className="movie-title">{this.props.movie.title}</span>
-      </div>
-    );
+const MovieCard = (props) => {
+  function addBasket(e) {
+    e.preventDefault();
+    console.log("first");
   }
-}
+  return (
+    <div
+      className="movie-card"
+      onClick={() => props.addToPoster(props.movie)}
+      draggable
+    >
+      <img
+        className="movie-image"
+        src={`https://image.tmdb.org/t/p/w500//${props.movie.poster_path}`}
+        alt={props.movie.original_title}
+      />
+      <div className="movie-title">
+        <h1>{props.movie.title}</h1>
+        <BsCartPlusFill size={30} onClick={(e) => addBasket(e)} />
+      </div>
+    </div>
+  );
+};
 
 export default MovieCard;

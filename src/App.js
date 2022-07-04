@@ -65,10 +65,10 @@ class App extends Component {
         <div className="main">
           <div className="logo-container">
             <MdLocalMovies size={30} color="dodgerblue" />
-            <h1>Movie App</h1>
+            <h1 className="app-title">Movie App</h1>
           </div>
           <input
-            placeholder="Bəyin oğurlanması..."
+            placeholder="Titanic..."
             id="search-movie"
             type="search"
             onChange={(e) => this.searchMovie(e)}

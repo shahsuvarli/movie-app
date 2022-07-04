@@ -2,9 +2,8 @@
   justify-content: center;
   align-items: center;
   display: grid;
-  width: 1100px;
+  max-width: 1100px;
   font-family: "Courier New", Courier, monospace;
-  /* background-color: aliceblue; */
 }
 body {
   justify-content: center;
@@ -18,7 +17,7 @@ body {
   align-items: center;
   display: grid;
 }
-h1 {
+.app-title {
   color: dodgerblue;
 }
 .logo-container {
@@ -45,8 +44,7 @@ h1 {
   position: relative;
   justify-content: center;
   text-align: center;
-  display: grid;
-  align-items: center;
+  display: flex;
 }
 .movie-card:hover {
   cursor: pointer;
@@ -65,16 +63,17 @@ h1 {
   background-color: dodgerblue;
   width: 100%;
   opacity: 0;
-  font-size: 20px;
+  font-size: 10px;
   height: 100%;
   border-radius: 5px;
-  justify-content: center;
+  place-items: center;
+  display: grid;
 }
 #search-movie {
   margin-bottom: 10px;
   border: 1px solid dodgerblue;
   border-radius: 5px;
-  width: 1100px;
+  max-width: 1100px;
   font-size: 20px;
   padding-left: 10px;
   color: dodgerblue;
